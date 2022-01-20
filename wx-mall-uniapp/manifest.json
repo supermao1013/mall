@@ -1,0 +1,268 @@
+{
+    "name" : "微同商城旗舰版",
+    "appid" : "__UNI__B80B32B",
+    "description" : "微同商城旗舰版是微同科技为企业用户定制的微信小程序商城项目，前端使用Vue+elementUI，后台基于SpringBoot 2 开发，微信相关开发使用WxJava，数据库操作使用Mybatis升级版MyBatisPlus，实现前后端分离。能够有效降低企业开发成本，提升开发效率。",
+    "versionName" : "1.0.0",
+    "versionCode" : 1,
+    "transformPx" : false,
+    /* 5+App特有相关 */
+    "app-plus" : {
+        "privacy" : {
+            "prompt" : "template",
+            //可取值template、custom、none
+            "template" : {
+                "title" : "服务协议和隐私政策",
+                "message" : "　　请你务必审慎阅读、充分理解“服务协议”和“隐私政策”各条款，包括但不限于：为了更好的向你提供服务，我们需要收集你的设备标识、操作日志等信息用于分析、优化应用性能。<br/>　　你可阅读<a href=\"https://fly2you.cn/platform-api/app/index/getTreatyData?type=1\">《服务协议》</a>和<a href=\"https://fly2you.cn/platform-api/app/index/getTreatyData?type=2\">《隐私政策》</a>了解详细信息。如果你同意，请点击下面按钮开始接受我们的服务。",
+                "buttonAccept" : "我知道了",
+                "buttonRefuse" : "暂不同意",
+                "second" : {
+                    "title" : "温馨提示",
+                    "message" : "　　进入应用前，你需先同意<a href=\"https://fly2you.cn/platform-api/app/index/getTreatyData?type=1\">《服务协议》</a>和<a href=\"https://fly2you.cn/platform-api/app/index/getTreatyData?type=2\">《隐私政策》</a>，否则将退出应用。",
+                    "buttonAccept" : "同意并继续",
+                    "buttonRefuse" : "退出应用"
+                }
+            }
+        },
+        "compatible" : {
+            "ignoreVersion" : true
+        },
+        "usingComponents" : true,
+        "nvueCompiler" : "uni-app",
+        "compilerVersion" : 3,
+        "splashscreen" : {
+            "alwaysShowBeforeRender" : true,
+            "waiting" : true,
+            "autoclose" : true,
+            "delay" : 0
+        },
+        /* 模块配置 */
+        "modules" : {
+            "Share" : {},
+            "VideoPlayer" : {},
+            "Webview-x5" : {},
+            "OAuth" : {},
+            "Push" : {},
+            "Payment" : {},
+            "Geolocation" : {},
+            "Maps" : {}
+        },
+        /* 应用发布信息 */
+        "distribute" : {
+            /* android打包配置 */
+            "android" : {
+                "permissionExternalStorage": {
+                    "request": "always",
+                    "prompt": "应用保存运行状态等信息，需要获取读写手机存储（系统提示为访问设备上的照片、媒体内容和文件）权限，请允许。"
+                },
+                "permissionPhoneState": {
+                    "request": "always",
+                    "prompt": "为保证您正常、安全地使用，需要获取设备识别码（部分手机提示为获取手机号码）使用权限，请允许。"
+                },
+                "permissions" : [
+                    "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
+                    "<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>",
+                    "<uses-permission android:name=\"android.permission.INTERNET\"/>",
+                    "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
+                    "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+                    "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
+                ],
+                "abiFilters" : [ "armeabi-v7a", "arm64-v8a" ]
+            },
+            /* ios打包配置 */
+            "ios" : {
+                "idfa" : true,
+                "capabilities" : {
+                    "entitlements" : {
+                        "com.apple.developer.associated-domains" : [ "applinks:fly2you.cn" ]
+                    }
+                },
+                "privacyDescription" : {
+                    "NSPhotoLibraryAddUsageDescription" : "“微同商城”想访问您的相机,为了帮您扫描二维码或者商品和互动等功能",
+                    "NSPhotoLibraryUsageDescription" : "“微同商城”想访问您的相机,为了帮您扫描二维码或者商品和互动等功能",
+                    "NSLocationWhenInUseUsageDescription" : "“微同商城”想访问您的位置,为您提供附近的商品、店铺及优惠资讯",
+                    "NSLocationAlwaysUsageDescription" : "“微同商城”想访问您的位置,为您提供附近的商品、店铺及优惠资讯",
+                    "NSLocationAlwaysAndWhenInUseUsageDescription" : "“微同商城”想访问您的位置,为您提供附近的商品、店铺及优惠资讯",
+                    "NSUserTrackingUsageDescription" : "请放心，开启权限不会获取您在其他站点的隐私信息，该权限仅用于标识设备并保障服务安全与提示浏览体验"
+                }
+            },
+            /* SDK配置 */
+            "sdkConfigs" : {
+                "maps" : {
+                    "amap" : {
+                        "appkey_ios" : "",
+                        "appkey_android" : ""
+                    }
+                },
+                "oauth" : {
+                    "weixin" : {
+                        "appid" : "",
+                        "appsecret" : "",
+                        "UniversalLinks" : ""
+                    },
+                    "apple" : {}
+                },
+                "push" : {
+                    "unipush" : {}
+                },
+                "payment" : {
+                    "weixin" : {
+                        "__platform__" : [ "ios", "android" ],
+                        "appid" : "",
+                        "UniversalLinks" : ""
+                    },
+                    "appleiap" : {},
+                    "alipay" : {
+                        "__platform__" : [ "ios", "android" ]
+                    }
+                },
+                "geolocation" : {
+                    "amap" : {
+                        "__platform__" : [ "ios", "android" ],
+                        "appkey_ios" : "",
+                        "appkey_android" : ""
+                    }
+                },
+                "share" : {
+                    "weixin" : {
+                        "appid" : "",
+                        "UniversalLinks" : ""
+                    }
+                },
+                "ad" : {
+                    "360" : {},
+                    "csj" : {},
+                    "gdt" : {}
+                }
+            },
+            "icons" : {
+                "android" : {
+                    "hdpi" : "unpackage/res/icons/72x72.png",
+                    "xhdpi" : "unpackage/res/icons/96x96.png",
+                    "xxhdpi" : "unpackage/res/icons/144x144.png",
+                    "xxxhdpi" : "unpackage/res/icons/192x192.png"
+                },
+                "ios" : {
+                    "appstore" : "unpackage/res/icons/1024x1024.png",
+                    "ipad" : {
+                        "app" : "unpackage/res/icons/76x76.png",
+                        "app@2x" : "unpackage/res/icons/152x152.png",
+                        "notification" : "unpackage/res/icons/20x20.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "proapp@2x" : "unpackage/res/icons/167x167.png",
+                        "settings" : "unpackage/res/icons/29x29.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "spotlight" : "unpackage/res/icons/40x40.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png"
+                    },
+                    "iphone" : {
+                        "app@2x" : "unpackage/res/icons/120x120.png",
+                        "app@3x" : "unpackage/res/icons/180x180.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "notification@3x" : "unpackage/res/icons/60x60.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "settings@3x" : "unpackage/res/icons/87x87.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png",
+                        "spotlight@3x" : "unpackage/res/icons/120x120.png"
+                    }
+                }
+            },
+            "splashscreen" : {
+                "androidStyle" : "common",
+                "iosStyle" : "common"
+            }
+        },
+        "nvueLaunchMode" : "fast",
+        "uniStatistics" : {
+            "enable" : true
+        }
+    },
+    /* 快应用特有相关 */
+    "quickapp" : {},
+    /* 小程序特有相关 */
+    "mp-weixin" : {
+        "appid" : "wx1780f8df83732740",
+        "setting" : {
+            "urlCheck" : true,
+            "es6" : true,
+            "minified" : true
+        },
+        "usingComponents" : true,
+        "permission" : {
+            "scope.userLocation" : {
+                "desc" : "你的位置信息将用于微同商城旗舰版"
+            }
+        },
+        "plugins" : {
+            "wt-logistics" : {
+                "version" : "1.2.0",
+                "provider" : "wxeca4341756496160"
+            },
+            "live-player-plugin" : {
+                "version" : "1.3.2",
+                "provider" : "wx2b03c6e691cd7370"
+            }
+        }
+    },
+    "mp-alipay" : {
+        "usingComponents" : true,
+        "uniStatistics" : {
+            "enable" : false
+        },
+        "appid" : ""
+    },
+    "mp-baidu" : {
+        "usingComponents" : true,
+        "uniStatistics" : {
+            "enable" : false
+        }
+    },
+    "mp-toutiao" : {
+        "usingComponents" : true,
+        "uniStatistics" : {
+            "enable" : false
+        },
+        "appid" : "tt48c13e7cd7fa675f"
+    },
+    "uniStatistics" : {
+        "enable" : false
+    },
+    "h5" : {
+        "title" : "微同商城旗舰版",
+        "sdkConfigs" : {
+            "maps" : {
+                "qqmap" : {
+                    "key" : ""
+                }
+            }
+        },
+        "domain" : "",
+        "router" : {
+            "mode" : "hash",
+            "base" : "/adminH5/"
+        },
+        "uniStatistics" : {
+            "enable" : true
+        },
+        "devServer" : {
+            "https" : false
+        }
+    },
+    "mp-qq" : {
+        "uniStatistics" : {
+            "enable" : false
+        }
+    }
+}

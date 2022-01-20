@@ -1,0 +1,84 @@
+server:
+  port: 8888
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    druid:
+      first:
+        url: jdbc:mysql://127.0.0.1:3306/platform-vendors?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&serverTimezone=Asia/Shanghai
+        username: root
+        password: 123456
+      second:
+        url: jdbc:mysql://127.0.0.1:3306/platform-vendors?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&serverTimezone=Asia/Shanghai
+        username: root
+        password: 123456
+#    driverClassName: oracle.jdbc.driver.OracleDriver
+#    druid:
+#      validation-query: SELECT 1
+#      first:
+#        url: jdbc:oracle:thin:@localhost:1521:platform
+#        username: platform
+#        password: 123456
+#      second:
+#        url: jdbc:oracle:thin:@localhost:1521:platform
+#        username: platform
+#        password: 123456
+      initial-size: 10 # 初始化连接:连接池启动时创建的初始化连接数量
+      max-active: 1000 # 最大活动连接:连接池在同一时间能够分配的最大活动连接的数量,如果设置为非正数则表示不限制
+      min-idle: 10 # 最小空闲连接:连接池中容许保持空闲状态的最小连接数量,低于这个数量将创建新的连接,如果设置为0则不创建
+      max-wait: 60000 # 最大等待时间:当没有可用连接时,连接池等待连接被归还的最大时间(以毫秒计数),超过时间则抛出异常,如果设置为-1表示无限等待
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        login-username: druid # sql-stat监控用户名
+        login-password: 123456 # sql-stat监控密码
+      filter:
+        stat:
+          log-slow-sql: true
+          slow-sql-millis: 1000
+          merge-sql: false
+        wall:
+          config:
+            multi-statement-allow: true
+  redis:
+    database: 0  # redis默认数据库0
+    host: 127.0.0.1 # 地址
+    port: 6379 # 端口
+    password: 123456   # 密码（默认为空）
+    timeout: 6000ms  # 连接超时时长（毫秒）
+    expire-time: 1800 # redis过期时间是30分钟30*60
+    jedis:
+      pool:
+        max-active: 10000  # 连接池最大连接数（使用负值表示没有限制）
+        max-wait: -1ms      # 连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-idle: 10      # 连接池中的最大空闲连接
+        min-idle: 0       # 连接池中的最小空闲连接
+
+wx:
+  pay: #微信支付配置，开发环境先随便填写
+    appId: wxd4f479068fdd93d8 #微信公众号或者小程序等的appid
+    mchId: 1619389241 #微信支付商户号
+    mchKey: wefsdabv23df049dfgkvcxmSDKFVKDSW #微信支付商户密钥
+    subAppId:  #服务商模式下的子商户公众账号ID
+    subMchId:  #服务商模式下的子商户号
+    keyPath: classpath:/apiclient_cert.p12 # p12证书的位置，可以指定绝对路径，也可以指定类路径（以classpath:开头）
+    spbillCreateIp:  #APP和网页支付提交用户端ip，Native支付填调用微信支付API的机器IP。
+    baseNotifyUrl: https://www.huakcy.com/platform-api #支付回调通知地址
+    keyContent: #p12证书文件内容的字节数组
+    useSandboxEnv: true # 是否使用微信支付的沙箱环境
+  open:
+    componentAppId: ""
+    componentSecret: ""
+    componentToken: ""
+    componentAesKey: ""
+  app:
+    appId: ""
